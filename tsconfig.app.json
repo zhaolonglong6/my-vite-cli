@@ -5,11 +5,11 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUnusedLocals": true, //禁止未使用的局部变量
+    "noUnusedParameters": true, //禁止未使用的函数参数
+    "erasableSyntaxOnly": true, //只允许可擦除的语法
+    "noFallthroughCasesInSwitch": true, //switch 语句中必须显式 break
+    "noUncheckedSideEffectImports": true //禁止未检查的副作用导入(禁止导入未被使用)
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
