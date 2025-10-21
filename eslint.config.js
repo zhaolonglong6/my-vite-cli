@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 import pluginVue from "vue-eslint-parser";
 import globals from "globals";
 import eslintVue from "eslint-plugin-vue";
-import prettier from "eslint-plugin-prettier";
+import prettier from "eslint-plugin-prettier/recommended";
 
 export default [
   // ✅ 基础 JS 推荐规则 (相当于 "eslint:recommended")
@@ -14,13 +14,6 @@ export default [
 
   // ✅ Vue 3 推荐规则
   ...eslintVue.configs["flat/recommended"],
-
-  {
-    plugins: { prettier },
-    rules: {
-      "prettier/prettier": "error",
-    },
-  },
 
   {
     files: ["**/*.{js,jsx,ts,tsx,vue,cjs,mjs}"],
@@ -42,6 +35,7 @@ export default [
       "vue/max-attributes-per-line": "off", // 限制标签属性在一行的数量
       "vue/html-closing-bracket-newline": "off", // 规定标签的闭合括号 > 前是否要换行
       "vue/html-self-closing": "off", // 规定哪些标签必须自闭合
+      "vue/singleline-html-element-content-newline": "off", // 关闭必须换行
     },
   },
 
@@ -59,4 +53,6 @@ export default [
       "src/assets/**",
     ],
   },
+  // 关闭eslint和Prettier的规则冲突，以prettier为准
+  prettier,
 ];

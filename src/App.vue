@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import Name from './pages/file/index.vue'
-import Age from './pages/rab/index.vue'
+import Name from "./pages/file/index.vue";
+import Age from "./pages/rab/index.vue";
 </script>
