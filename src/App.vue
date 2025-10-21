@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen p-times-4 w-screen bg-primary-normal text-white text-[20px]">
+  <div class="h-screen p-times-4 w-full text-white text-[20px]">
     <Name />
     <Age />
   </div>

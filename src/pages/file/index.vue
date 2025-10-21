@@ -14,7 +14,7 @@ interface User {
   name: string;
 }
 
-const bob = import.meta.glob("/public/vite.svg");
+const bob = import.meta.glob("/vite.svg");
 for (const path in bob) {
   // console.log(path)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

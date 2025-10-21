@@ -1,4 +1,6 @@
 module.exports = {
+  // Windows 默认换行符 CRLF，如果 macOS/Linux 用 "lf"
+  endOfLine: "auto",
   // (x)=>{},单个参数箭头函数是否显示小括号。(always:始终显示;avoid:省略括号。默认:always)
   arrowParens: "always",
   // 开始标签的右尖括号是否跟随在最后一行属性末尾，默认false
