@@ -1,5 +1,5 @@
 const CACHE_NAME = "cache-test";
-const urlsToCache = ["/", "/index.html"];
+const urlsToCache = ["/", "/index.html", "/@vite/client"];
 
 // Install
 self.addEventListener("install", (event) => {
@@ -28,20 +28,12 @@ self.addEventListener("activate", (event) => {
 // Fetch
 self.addEventListener("fetch", (event) => {
   // console.log("fetch", event.request);
-
   const url = event.request.url;
   if (!url.startsWith("http")) return;
-  // 🧠 忽略 Vite 开发服务器相关的请求
-  if (url.includes("@vite") || url.includes("sockjs") || url.includes("hot-update")) {
-    return;
-  }
-
   event.respondWith(cacheFirst(event.request));
 });
 
 async function cacheFirst(request) {
-  console.log("cacheFirst", request);
-
   const cache = await caches.open(CACHE_NAME);
   // 先检查缓存
   const cached = await cache.match(request);
@@ -63,3 +55,8 @@ async function cacheFirst(request) {
     });
   }
 }
+
+// Workbox（Google 官方库，最推荐）
+// https://developers.google.com/web/tools/workbox
+
+// event.respondWith 是feach必须要有的
